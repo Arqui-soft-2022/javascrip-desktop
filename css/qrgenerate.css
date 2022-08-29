@@ -130,3 +130,40 @@ input{
     width: 70px;
     
 }
+
+.ventana{
+    background-color: white;
+    width: 15%;
+    color: black;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 22px;
+    position: absolute;
+    left: 82%;
+    top: 13%;
+    display: none;
+    height: 90px;
+}
+
+.x{
+    width: 20px;
+    height: 20px;
+    border-radius: 22px;
+    position: absolute;
+
+}
+
+#close{
+    width: 20px;
+    height: 20px;
+    border-radius: 22px;
+    position: absolute;
+    left: 75%;
+}
+
+.logo{
+    width: 25px;
+    height: 25px;
+    
+}
