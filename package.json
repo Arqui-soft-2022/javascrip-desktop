@@ -18,5 +18,8 @@
   "homepage": "https://github.com/Arqui-soft-2022/javascript-desktop#readme",
   "devDependencies": {
     "electron": "^20.1.0"
+  },
+  "dependencies": {
+    "electron-reload": "^2.0.0-alpha.1"
   }
 }
