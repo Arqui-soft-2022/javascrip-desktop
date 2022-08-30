@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="header-container">
-            <a href="">
+            <a href="javascript:abrir()">
                 <div class="container-user-info">
                     <img class="user-icon" src="img/user_icon.png" alt="">
                     <p>Username</p>
@@ -20,6 +20,21 @@
         </div>
     </header>
     <div class="main-body">
+        
+             <div class="ventana" id="vent">
+            
+           
+            <div id="close"><a href="javascript:cerrar()"><img class="logo" src="img/x.png"></a></div>
+            <br>
+            
+            <a href="#"> <img class="logo" src="img/historial.png"> Ver Historial </a>
+            <br>
+            
+            <a href="registro.html"> <img class="logo" src="img/cs.png">Cerrar Sesión</a>
+        
+        </div>
+
+
         <div class="body-child">
             <div class="input-box">
                 <p class="title">Genere su código QR</p>
@@ -37,5 +52,16 @@
             </div>
         </div>
     </div>
+
+      <script>
+        function abrir() {
+            document.getElementById('vent').style.display="block";
+        }
+         function cerrar() {
+            document.getElementById('vent').style.display="none";
+        }
+    </script>
+
+    <script src="scripts/controlador.js"></script>
 </body>
 </html>
