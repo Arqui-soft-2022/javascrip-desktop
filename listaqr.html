@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="header-container">
-            <a href="">
+            <a href="javascript:abrir()">
                 <div class="container-user-info">
                     <img class="user-icon" src="img/user_icon.png" alt="">
                     <p>Username</p>
@@ -20,6 +20,15 @@
         </div>
     </header>
     <div class="main-body">
+
+                <div class="ventana" id="vent">
+            <div id="close"><a href="javascript:cerrar()"><img class="logos" src="img/x.png"></a></div>
+            <br>  
+            <a href="qrgenerate.html"> <img class="logos" src="img/generarqr.png"> Generar QR </a>
+            <br>
+            <a href="index.html"> <img class="logos" src="img/cs.png">Cerrar Sesión</a>
+        </div>
+
         <div class="body-child">
             <div class="input-box">
                 <p class="title">Códigos QR Generados</p>
@@ -38,5 +47,7 @@
             
         </div>
     </div>
+
+    <script src="js/popup.js"></script>
 </body>
 </html>
