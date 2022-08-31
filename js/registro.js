@@ -30,11 +30,12 @@ async function registro() {
     }
     const response = await fetch(`${API_LOGIN_URL}/auth/register`, options)
     const dataResponse = await response.json()
-    if (dataResponse.errors && dataResponse.errors.length > 0) {
-      alert(dataResponse.errors[0].msg)
-    } else {
-      alert(dataResponse.msg)
+    if (response && response.status == 200) {
       window.location.href="index.html"
+    } else {
+      if (dataResponse.errors && dataResponse.errors.length > 0) {
+        alert(dataResponse.errors[0].msg)
+      }
     }
   } catch (error) {
     console.log(error[0])

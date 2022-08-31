@@ -34,7 +34,6 @@ async function iniciarSesion() {
     }
     const response = await fetch(`${API_LOGIN_URL}/auth/login`, options)
     const dataResponse = await response.json()
-    console.warn(dataResponse, 'response login')
     if (response && response.status == 200) {
       window.location.href="qrgenerate.html"
       localStorage.setItem('usuario', JSON.stringify(dataResponse.usuario))
