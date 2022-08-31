@@ -2,29 +2,25 @@ const API_LOGIN_URL= "https://codeqr-generate.herokuapp.com/api"
 
 const formulario = document.getElementById('formulario')
 
+const nombre = document.getElementById('nombre')
 const usuario = document.getElementById('usuario')
 const password = document.getElementById('password')
-
-function main () {
-  const usuarioLocalStorage = localStorage.getItem('usuario')
-  if (usuarioLocalStorage !== null) {
-    window.location.href="qrgenerate.html"
-  }
-}
-
-main()
+const email = document.getElementById('email')
 
 formulario.addEventListener('submit', (e) => {
   e.preventDefault()
-  iniciarSesion()
+  registro()
 })
 
-async function iniciarSesion() {
+async function registro() {
   try {
     let data = {
+      name: nombre.value,
       username: usuario.value,
-      password: password.value
+      password: password.value,
+      email: email.value
     }
+    console.warn(data, 'data enviar')
     const options = {
       method: "POST",
       headers: {
@@ -32,14 +28,13 @@ async function iniciarSesion() {
       },
       body: JSON.stringify(data)
     }
-    const response = await fetch(`${API_LOGIN_URL}/auth/login`, options)
+    const response = await fetch(`${API_LOGIN_URL}/auth/register`, options)
     const dataResponse = await response.json()
-    console.warn(dataResponse, 'response login')
-    if (response && response.status == 200) {
-      window.location.href="qrgenerate.html"
-      localStorage.setItem('usuario', JSON.stringify(dataResponse.usuario))
+    if (dataResponse.errors && dataResponse.errors.length > 0) {
+      alert(dataResponse.errors[0].msg)
     } else {
       alert(dataResponse.msg)
+      window.location.href="index.html"
     }
   } catch (error) {
     console.log(error[0])
