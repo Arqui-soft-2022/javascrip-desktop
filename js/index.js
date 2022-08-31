@@ -25,6 +25,15 @@ async function iniciarSesion() {
     }
     const response = await fetch(`${API_LOGIN_URL}/auth/login`, options)
     const dataResponse = await response.json()
+    const castResponse= Object.values(dataResponse);
+    if(castResponse[0].id_usuario>=0){
+      console.log("si existo")
+      window.location.href="qrgenerate.html"
+    }
+    else{
+      console.log("no existo")
+    }
+
     if (dataResponse.errors && dataResponse.errors.length > 0) {
       alert(dataResponse.errors[0].msg)
     }
